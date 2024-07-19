@@ -1,0 +1,32 @@
+div {
+    margin: 0.2em;
+}
+
+.container {
+    display: flex;
+    border: solid 1px red;
+
+    .left {
+        flex: 1;
+        border: solid 1px green;
+        text-align: center;
+    }
+    
+    .middle {
+        flex: 1;
+        border: solid 1px purple;
+        text-align: center;
+    }
+    
+    .right {
+        flex: 1;
+        border: solid 1px;
+        text-align: center;
+    }
+    
+}
+
+.bottom {
+    text-align: center;
+    border: solid 1px yellowgreen;
+}

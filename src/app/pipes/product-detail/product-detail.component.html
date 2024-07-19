@@ -1,0 +1,17 @@
+@if(product) {
+    <h2>Product Details</h2>
+    <h3>{{product.name}}</h3>
+    <span>{{product.price | currency:'EUR'}}</span>
+    @switch (product.name) {
+        @case('Webcam') {
+            <p>Product is used for video</p>
+        }
+        @case('Microphone') {
+            <p>Product is used for audio</p>
+        }
+        @default {
+            Product is for general use
+        }
+    }
+    <button (click)="buy()">Buy Now</button>
+}

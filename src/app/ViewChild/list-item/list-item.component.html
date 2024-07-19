@@ -1,0 +1,11 @@
+Add an item
+<input type="text" [(ngModel)]="item">
+<h3>{{item}}</h3>
+<button (click)="addNewItem()">Add</button>
+
+<h1>List Component</h1>
+<ol>
+    @for(item of items; track item;) {
+        <li>{{item}}</li>
+    }
+</ol>

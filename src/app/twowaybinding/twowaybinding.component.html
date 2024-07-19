@@ -1,0 +1,57 @@
+<input type="number" [(ngModel)]="age">
+<p>Your age is {{age}}</p>
+
+Try it, toggle
+<p>
+  <ng-toggle
+    [(ngModel)]="config.value"
+    [disabled]="config.disabled"
+    [width]="config.width"
+    [height]="config.height"
+    [margin]="config.margin"
+    [labels]="config.labels"
+    [color]="config.color"
+    [switchColor]="config.switchColor"
+    [fontColor]="config.fontColor"
+    [fontSize]="config.fontSize"
+    required
+  ></ng-toggle>
+</p>
+<form [formGroup]="form">
+    Hi
+    <ng-toggle formControlName="show"></ng-toggle>
+    @if(form.get('show')?.errors?.['required']) {
+        <div>Required</div>
+    }
+  </form>
+
+<h3>Toggle is cool</h3>
+<div>
+  <ng-toggle [(ngModel)]="showEmoji"></ng-toggle>
+  @if(showEmoji) {
+    <div>👋</div>
+  } @else {
+    <div>hola</div>
+  }
+</div>
+
+<h3>Toggle value externally</h3>
+<p>
+  Writing <code>ok</code> in this set the toggle <code>true</code>, otherwise
+  <code>false</code>
+</p>
+<input [(ngModel)]="anotherValue" (input)="changeTheInputValue()" />
+<br />
+
+Using <code>[value]</code>: <ng-toggle [value]="toggleValue"></ng-toggle>
+<br />
+Using <code>[(value)]</code>: <ng-toggle [(value)]="toggleValue2"></ng-toggle>
+<br>
+<br>
+<ng-toggle [(ngModel)]="sharedValue"></ng-toggle>
+<br>
+<br>
+<ng-toggle [ngModel]="sharedValue"></ng-toggle>
+<ng-toggle [value]="sharedValue"></ng-toggle>
+<br>
+<br>
