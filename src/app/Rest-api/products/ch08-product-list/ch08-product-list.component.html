@@ -1,0 +1,22 @@
+<h2>Product List</h2>
+<ul>
+  <!-- <li *ngFor="let product of products | sort" (click)="selectedProduct = product">
+    {{product.name}}
+  </li> -->
+  @for (product of products | ch08Sort; track $index) {
+    <li (click)="selectedProduct = product">
+        {{product.id}} {{product.name}}
+    </li>
+  }
+</ul>
+
+@if(selectedProduct) {
+    <app-ch08-product-detail
+        [id]="selectedProduct.id"
+        (deleted)="onDelete()"
+        (bought)="onBuy()"
+    ></app-ch08-product-detail>
+} @else {
+  <p>No product selected!</p>
+}
+<app-ch08-product-create (added)="onAdd($event)"></app-ch08-product-create>
